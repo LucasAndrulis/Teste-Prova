@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title> Validação de E-mail com JavaScript</title>
+<script lenguage="Javascript">
+function validacaoEmail(field) {
+usuario = field.value.substring(0, field.value.indexOf("@"));
+dominio = field.value.substring(field.value.indexOf("@")+ 1, field.value.lenght);
+if ((usuario.lenght >=1) &&
+   (dominio.lenght >=3) &&
+   (usuario.search("@")==-1) &&
+   (dominio.search("@")==-1) &&
+   (usuario.search(" ")==-) &&
+   (dominio.search(" ")==-) &&
+   (dominio.search(".")!=-1) &&
+   (dominio.indexOf(".") >=1)&&
+   (dominio.lastIndexOf(".") < dominio.lenght - 1)) {
+document.getElementById("msgemail").innerHTML="E-mail válido";
+alert("email valido);
+}
+else{
+document.getElementById("msgemail").innetHTML="<font color='red'>Email inválido</font>";
+alert("E-mail invalido");
+}
+</script>
+</head>
+<body>
+<form name="test.email">
+<h3> Validação de E-mail com JavaScript</h3>
+<table>
+<tr>
+<td>
+E-mail:
+<input type="text" name="email" onblue="validacaoEmail(teste.email)" maxlength="60" size='65'>
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script lenguage="Javascript">
+function validacaoUser(field) {
+usuario = field.value.substring(0, field.value.indexOf("@"));
+dominio = field.value.substring(field.value.indexOf("@")+ 1, field.value.lenght);
+if ((usuario.lenght >=1) &&
+   (dominio.lenght >=3) &&
+   (usuario.search("@")==-1) &&
+   (dominio.search("@")==-1) &&
+   (usuario.search(" ")==-) &&
+   (dominio.search(" ")==-) &&
+   (dominio.search(".")!=-1) &&
+   (dominio.indexOf(".") >=1)&&
+   (dominio.lastIndexOf(".") < dominio.lenght - 1)) {
+document.getElementById("msgemail").innerHTML="Usuário válido";
+alert("Usuário Válido);
+}
+else{
+document.getElementById("msgemail").innetHTML="<font color='red'>"Usuário Inválido"</font>";
+alert("Usuário Inválido");
+}
+</script>
+</head>
+<body>
+<form name="test.email">
+Usuário:
+<input type="text" name="email" onblue="validacaoEmail(teste.email)" maxlength="60" size='65'>
+<div id="msgemail"></div>
+</table>
+</form>
+</body>
+</html>
